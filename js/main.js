@@ -1,4 +1,4 @@
-// Main JavaScript for Cabinmate Website Clone
+// Main JavaScript for Drishka Library Reading Hall Website
 
 (function() {
     'use strict';
@@ -36,7 +36,7 @@
     // Mobile Menu Functionality
     function initMobileMenu() {
         if (!mobileMenuToggle || !nav) {
-            console.warn('Mobile menu elements not found');
+            console.warn('Mobile menu elements not found for Drishka');
             return;
         }
 
@@ -103,7 +103,7 @@
     // Back to Top Button
     function initBackToTop() {
         if (!backToTop) {
-            console.warn('Back to top button not found');
+            console.warn('Back to top button not found for Drishka');
             return;
         }
 
@@ -136,7 +136,7 @@
     // Header Scroll Effect
     function initHeaderScroll() {
         if (!header) {
-            console.warn('Header element not found');
+            console.warn('Header element not found for Drishka');
             return;
         }
 
@@ -158,14 +158,14 @@
     // Testimonial Slider
     function initTestimonialSlider() {
         if (!testimonialsSlider) {
-            console.warn('Testimonials slider not found');
+            console.warn('Testimonials slider not found for Drishka');
             return;
         }
 
         const testimonialItems = testimonialsSlider.querySelectorAll('.testimonial-item');
         
         if (testimonialItems.length === 0) {
-            console.warn('No testimonial items found');
+            console.warn('No testimonial items found for Drishka');
             return;
         }
 
@@ -220,13 +220,13 @@
     // Stats Counter Animation
     function initStatsCounter() {
         if (statNumbers.length === 0) {
-            console.warn('No stat numbers found');
+            console.warn('No stat numbers found for Drishka');
             return;
         }
 
         const statsSection = document.querySelector('.stats-section');
         if (!statsSection) {
-            console.warn('Stats section not found');
+            console.warn('Stats section not found for Drishka');
             return;
         }
 
@@ -287,7 +287,7 @@
         
         if (animatedElements.length === 0) {
             // Add animation class to elements that should animate
-            const elementsToAnimate = document.querySelectorAll('.service-card, .feature-item, .section-content');
+            const elementsToAnimate = document.querySelectorAll('.service-card, .feature-item, .section-content, .subject-item');
             elementsToAnimate.forEach(el => el.classList.add('animate-on-scroll'));
         }
 
@@ -382,7 +382,7 @@
 
         requiredElements.forEach(element => {
             if (!document.querySelector(element.selector)) {
-                console.warn(`${element.name} element not found: ${element.selector}`);
+                console.warn(`${element.name} element not found for Drishka: ${element.selector}`);
             }
         });
     }
@@ -505,7 +505,7 @@
                     const loadTime = perfData.loadEventEnd - perfData.navigationStart;
                     
                     if (loadTime > 3000) {
-                        console.warn('Page load time is slow:', loadTime + 'ms');
+                        console.warn('Drishka page load time is slow:', loadTime + 'ms');
                     }
                 }, 0);
             });
@@ -516,7 +516,7 @@
     initPerformanceMonitoring();
 
     // Expose some functions globally for debugging
-    window.CabinmateApp = {
+    window.DrishkaApp = {
         showMessage,
         initFormHandling,
         version: '1.0.0'
@@ -526,22 +526,22 @@
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
             // Page is hidden, pause animations if needed
-            console.log('Page hidden');
+            console.log('Drishka page hidden');
         } else {
             // Page is visible, resume animations if needed
-            console.log('Page visible');
+            console.log('Drishka page visible');
         }
     });
 
     // Error handling for uncaught errors
     window.addEventListener('error', function(e) {
-        console.error('Uncaught error:', e.error);
+        console.error('Uncaught error in Drishka app:', e.error);
         // Could send error to analytics service here
     });
 
     // Handle unhandled promise rejections
     window.addEventListener('unhandledrejection', function(e) {
-        console.error('Unhandled promise rejection:', e.reason);
+        console.error('Unhandled promise rejection in Drishka app:', e.reason);
         // Could send error to analytics service here
     });
 
